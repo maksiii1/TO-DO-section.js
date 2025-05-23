@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+
+.todo-container {
+  width: 90%;
+  margin: auto;
+  border: 1px solid rgb(225, 225, 225);
+}
+
+.todo-add {
+  display: flex;
+  margin: 10px;
+}
+
+.todo-input {
+  width: 80%;
+  height: 45px;
+  font-size: 22px;
+}
+
+.todo-input:focus {
+  outline: none;
+}
+
+.todo-btn {
+  width: 20%;
+  height: 45px;
+  overflow: hidden;
+  line-height: 17px;
+  font-size: 22px;
+}
+
+@media screen and (max-width: 600px) {
+  .todo-input {
+    width: 100%;
+  }
+
+  .todo-btn {
+    width: 100%;
+  }
+
+  .todo-add {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.todo-list-items {
+  margin: 10px;
+}
