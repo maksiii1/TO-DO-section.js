@@ -26,7 +26,7 @@ function addTodo() {
     }
   }
 
-  newElement.classList.add("todo-list-correct-item");
+  newElement.classList.toggle("todo-list-correct-item");
   newElement.textContent = inputValue;
   todoList.appendChild(newElement);
 }
