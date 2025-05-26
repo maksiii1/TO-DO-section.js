@@ -5,6 +5,8 @@ const input = document.querySelector(".todo-input");
 function addTodo() {
   const inputValue = input.value.trim();
   const newElement = document.createElement("div");
+  const deleteBtn = document.createElement("button");
+  deleteBtn.textContent = "Удалить задачу";
 
   if (inputValue === "" || inputValue === null) {
     newElement.className = "todo-list-items";
@@ -27,8 +29,10 @@ function addTodo() {
   }
 
   newElement.classList.toggle("todo-list-correct-item");
+  deleteBtn.classList.toggle("delete-question");
   newElement.textContent = inputValue;
   todoList.appendChild(newElement);
+  newElement.appendChild(deleteBtn);
 }
 
 todoBtn.addEventListener("click", () => {
@@ -48,5 +52,9 @@ todoList.addEventListener("click", (event) => {
     target.classList.toggle("todo-list-complate");
   } else if (target.classList.contains("todo-list-complate")) {
     target.classList.toggle("todo-list-complate");
+  }
+
+  if (target.classList.contains("delete-question")) {
+    target.parentNode.remove();
   }
 });

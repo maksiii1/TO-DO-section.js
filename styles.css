@@ -6,7 +6,7 @@
 
 .todo-container {
   width: 90%;
-  margin: auto;
+  margin: 10px auto;
   border: 1px solid rgb(225, 225, 225);
 }
 
@@ -52,6 +52,12 @@
   margin: 10px;
 }
 
+.todo-list-correct-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .todo-list-correct-item:nth-child(even) {
   padding: 15px 10px;
   background-color: rgb(195, 195, 195);
@@ -68,7 +74,21 @@
   transition: all 0.1s;
 }
 
-.todo-list-complate {
+.todo-list-complate:not(.delete-question) {
   background-color: rgb(226, 119, 119) !important;
   text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+
+.delete-question {
+  border: 1px solid rgb(221, 221, 221);
+  background-color: rgb(236, 236, 236);
+  padding: 15px 10px;
+  cursor: pointer;
+  transition: all 0.1s;
+  text-decoration: none !important;
+}
+
+.delete-question:hover {
+  background-color: rgb(150, 150, 150);
 }
