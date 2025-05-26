@@ -21,6 +21,10 @@
   font-size: 22px;
 }
 
+.todo-lists {
+  font-size: 22px;
+}
+
 .todo-input:focus {
   outline: none;
 }
@@ -91,4 +95,5 @@
 
 .delete-question:hover {
   background-color: rgb(150, 150, 150);
+  border: 1px solid transparent;
 }
