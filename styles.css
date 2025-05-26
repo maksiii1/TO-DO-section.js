@@ -49,3 +49,19 @@
 .todo-list-items {
   margin: 10px;
 }
+
+.todo-list-correct-item:hover {
+  background-color: rgb(172, 172, 172) !important;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+.todo-list-correct-item:nth-child(even) {
+  padding: 15px 10px;
+  background-color: rgb(195, 195, 195);
+}
+
+.todo-list-correct-item:nth-child(odd) {
+  padding: 15px 10px;
+  background-color: rgb(255, 255, 255);
+}
