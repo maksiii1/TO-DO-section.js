@@ -26,7 +26,7 @@ function addTodo() {
     }
   }
 
-  newElement.className = "todo-list-correct-item";
+  newElement.classList.add("todo-list-correct-item");
   newElement.textContent = inputValue;
   todoList.appendChild(newElement);
 }
@@ -38,5 +38,15 @@ todoBtn.addEventListener("click", () => {
 document.querySelector(".todo-input").addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
     addTodo();
+  }
+});
+
+todoList.addEventListener("click", (event) => {
+  const target = event.target;
+
+  if (target.classList.contains("todo-list-correct-item")) {
+    target.classList.toggle("todo-list-complate");
+  } else if (target.classList.contains("todo-list-complate")) {
+    target.classList.toggle("todo-list-complate");
   }
 });
