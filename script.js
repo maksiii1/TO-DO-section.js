@@ -1,6 +1,7 @@
 const todoBtn = document.querySelector(".todo-btn");
 const todoList = document.querySelector(".todo-lists");
 const input = document.querySelector(".todo-input");
+const controlBtns = document.querySelector(".control-buttons");
 
 function addTodo() {
   const inputValue = input.value.trim();
@@ -56,5 +57,28 @@ todoList.addEventListener("click", (event) => {
 
   if (target.classList.contains("delete-question")) {
     target.parentNode.remove();
+  }
+});
+
+controlBtns.addEventListener("click", (event) => {
+  const target = event.target;
+  const elements = todoList.querySelectorAll(".todo-list-correct-item");
+
+  if (target.textContent === "Выбрать все задачи") {
+    elements.forEach((element) => {
+      if (element.tagName === "DIV") {
+        if (!element.classList.contains("todo-list-complate")) {
+          element.classList.toggle("todo-list-complate");
+        }
+      }
+    });
+  } else {
+    elements.forEach((element) => {
+      if (element.tagName === "DIV") {
+        if (element.classList.contains("todo-list-complate")) {
+          element.classList.toggle("todo-list-complate");
+        }
+      }
+    });
   }
 });
